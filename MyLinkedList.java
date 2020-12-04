@@ -22,6 +22,18 @@ public class MyLinkedList {
         }
     }
     
+    public void append(MyNode myNode) {
+        if (this.head == null) {
+            this.head = myNode;
+        }
+        if (this.tail == null) {
+            this.tail = myNode;
+        } else {
+            this.tail.setNext(myNode);
+            this.tail=myNode;
+        }
+    }
+    
     public void printLinkedList() {
     	System.out.println(head.toString());
     }
@@ -30,9 +42,9 @@ public class MyLinkedList {
 		MyNode node1=new MyNode(56);
 		MyNode node2=new MyNode(30);
 		MyNode node3=new MyNode(70);
-		ll.add(node1);
-		ll.add(node2);
-		ll.add(node3);
+		ll.append(node1);
+		ll.append(node2);
+		ll.append(node3);
 		ll.printLinkedList();
 	}
 
