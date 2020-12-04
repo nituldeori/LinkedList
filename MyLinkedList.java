@@ -43,8 +43,10 @@ public class MyLinkedList {
 		MyNode node2=new MyNode(30);
 		MyNode node3=new MyNode(70);
 		ll.append(node1);
-		ll.append(node2);
 		ll.append(node3);
+		ll.printLinkedList();
+		node1.setNext(node2);
+		node2.setNext(node3);
 		ll.printLinkedList();
 	}
 
