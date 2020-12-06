@@ -18,7 +18,7 @@ public class MyQueue {
 		return myLinkedList.head;
 	}
 	
-	public void pop() {
+	public void dequeue() {
 		myLinkedList.pop();
 	}
 	
@@ -31,6 +31,13 @@ public class MyQueue {
 		myQueue.enqueue(Node2);
 		myQueue.enqueue(Node3);
 		myQueue.getMyLinkedList().printLinkedList();
+		System.out.println(myQueue.peak().getKey());
+		myQueue.dequeue();
+		System.out.println(myQueue.peak().getKey());
+		myQueue.dequeue();
+		System.out.println(myQueue.peak().getKey());
+		myQueue.dequeue();
+		myQueue.dequeue();
 	}
 
 }
