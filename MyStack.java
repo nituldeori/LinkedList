@@ -29,6 +29,13 @@ public class MyStack {
 		myStack.push(Node2);
 		myStack.push(Node3);
 		myStack.getMyLinkedList().printLinkedList();
+		System.out.println(myStack.peak().getKey());
+		myStack.pop();
+		System.out.println(myStack.peak().getKey());
+		myStack.pop();
+		System.out.println(myStack.peak().getKey());
+		myStack.pop();
+		myStack.pop();
 	}
 
 }

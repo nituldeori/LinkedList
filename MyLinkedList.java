@@ -40,6 +40,7 @@ public class MyLinkedList {
     
     public void pop() {
     	if(head==null) {
+    		System.out.println("Linked List is empty");
     		head=null;
     	}
     	else {
@@ -52,6 +53,7 @@ public class MyLinkedList {
     
     public void popLast() {
     	if(head==null) {
+    		System.out.println("Linked List is empty");
     		head=null;
     	}
     	else {
