@@ -37,6 +37,18 @@ public class MyLinkedList {
     public void printLinkedList() {
     	System.out.println(head.toString());
     }
+    
+    public void pop() {
+    	if(head==null) {
+    		head=null;
+    	}
+    	else {
+    		MyNode temp=head.getNext();
+    		head=temp;
+    		
+    	}
+    	
+    }
     public static void main(String[] args) {
 		MyLinkedList ll=new MyLinkedList();
 		MyNode node1=new MyNode(56);
@@ -47,6 +59,8 @@ public class MyLinkedList {
 		ll.printLinkedList();
 		node1.setNext(node2);
 		node2.setNext(node3);
+		ll.printLinkedList();
+		ll.pop();
 		ll.printLinkedList();
 	}
 
