@@ -15,13 +15,27 @@ public class MyLinkedListTest {
 		MyNode node2=new MyNode(30);
 		MyNode node3=new MyNode(70);
 		ll.append(node1);
+		ll.append(node2);
 		ll.append(node3);
-		ll.printLinkedList();
-		node1.setNext(node2);
-		node2.setNext(node3);
 		ll.printLinkedList();
 		int pos=ll.searchNodeWithValue(30);
 		assertEquals(2, pos);
+	}
+	
+	@Test
+	public void testInsertAfterGivenNodeValue() {
+		MyLinkedList ll=new MyLinkedList();
+		MyNode node1=new MyNode(56);
+		MyNode node2=new MyNode(30);
+		MyNode node3=new MyNode(70);
+		ll.append(node1);
+		ll.append(node2);
+		ll.append(node3);
+		ll.printLinkedList();
+		ll.insertAfterGivenNodeValue(30,40);
+		ll.printLinkedList();
+		int pos=ll.searchNodeWithValue(40);
+		assertEquals(3,pos);
 	}
 
 }

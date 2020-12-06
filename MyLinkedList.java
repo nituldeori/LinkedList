@@ -66,7 +66,7 @@ public class MyLinkedList {
     
     public int searchNodeWithValue(int value) {
     	if(head==null) {
-    		System.out.println("Linked List is empty");;
+    		System.out.println("Linked List is empty");
     	}
     	else {
     		MyNode temp=head;
@@ -84,6 +84,27 @@ public class MyLinkedList {
     	return -1;
     	
     }
+    
+    public void insertAfterGivenNodeValue(int value,int valueInsert) {
+    	if(head==null) {
+    		System.out.println("Linked List is empty");
+    	}
+    	else {
+    		MyNode temp=head;
+    		while(temp.getNext()!=null) {
+    			if(temp.getKey()==value) {
+    				MyNode newNode=new MyNode(valueInsert);
+    				MyNode next=temp.getNext();
+    				temp.setNext(newNode);
+    				newNode.setNext(next);
+    				return;
+    			}
+    			temp=temp.getNext();
+    		}
+    		
+    	}
+    	System.out.println("No node with given value found");
+    }
     public static void main(String[] args) {
 		MyLinkedList ll=new MyLinkedList();
 		MyNode node1=new MyNode(56);
@@ -95,7 +116,8 @@ public class MyLinkedList {
 		node1.setNext(node2);
 		node2.setNext(node3);
 		ll.printLinkedList();
-		int pos=ll.searchNodeWithValue(30);
+		ll.insertAfterGivenNodeValue(30,40);
+		ll.printLinkedList();
 	}
 
 }
