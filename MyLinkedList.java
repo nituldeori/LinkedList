@@ -63,6 +63,27 @@ public class MyLinkedList {
             tail.setNext(null);
     	}
     }
+    
+    public int searchNodeWithValue(int value) {
+    	if(head==null) {
+    		System.out.println("Linked List is empty");;
+    	}
+    	else {
+    		MyNode temp=head;
+    		int i=1;
+    		while(temp.getNext()!=null) {
+    			if(temp.getKey()==value) {
+    				System.out.println("Node with value "+value+" found at node "+i);
+    				return i;
+    			}
+    			temp=temp.getNext();
+    			i++;
+    		}
+    	}
+    	System.out.println("No node with value "+value+" found");
+    	return -1;
+    	
+    }
     public static void main(String[] args) {
 		MyLinkedList ll=new MyLinkedList();
 		MyNode node1=new MyNode(56);
@@ -74,8 +95,7 @@ public class MyLinkedList {
 		node1.setNext(node2);
 		node2.setNext(node3);
 		ll.printLinkedList();
-		ll.popLast();
-		ll.printLinkedList();
+		int pos=ll.searchNodeWithValue(30);
 	}
 
 }
