@@ -49,6 +49,20 @@ public class MyLinkedList {
     	}
     	
     }
+    
+    public void popLast() {
+    	if(head==null) {
+    		head=null;
+    	}
+    	else {
+    		MyNode temp=head;
+    		while(temp.getNext().getNext()!=null) {
+    			temp=temp.getNext();
+    		}
+    		tail=temp;
+            tail.setNext(null);
+    	}
+    }
     public static void main(String[] args) {
 		MyLinkedList ll=new MyLinkedList();
 		MyNode node1=new MyNode(56);
@@ -60,7 +74,7 @@ public class MyLinkedList {
 		node1.setNext(node2);
 		node2.setNext(node3);
 		ll.printLinkedList();
-		ll.pop();
+		ll.popLast();
 		ll.printLinkedList();
 	}
 
